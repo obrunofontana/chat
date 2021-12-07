@@ -1,14 +1,13 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import GlobalStyle from './globalStyle';
+
+import GlobalStyle from './styles/globalStyle';
 
 // Só irá carregar a página quando realmente for requisitada
 const About = lazy(() => import('./About'));
 const Home = lazy(() => import('./Home'));
 
-// import { Container } from './styles';
-
-const App: React.FC = function () {
+const App = function () {
   return (
     <>
       <GlobalStyle />

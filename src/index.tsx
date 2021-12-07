@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import theme from './theme';
+import App from './App';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import theme from './styles/theme';
 
 ReactDOM.render(
   <React.StrictMode>
