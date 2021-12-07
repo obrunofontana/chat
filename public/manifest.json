@@ -2,7 +2,7 @@
     "theme_color": "#2081CE",
     "background_color": "#FFF",
     "display": "standalone",
-    "start_url": ".",
+    "start_url": "./index.html",
     "name": "Nela Chat",
     "short_name": "Nela Chat",
     "icons": [
