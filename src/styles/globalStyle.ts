@@ -1,11 +1,22 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  html, body {
+  * {
+    margin: 0;
+    padding: 0;
+    borde-sizing: border-box;
+  }
+  
+  html, body, #root {
     height: 100%;
-    width: 100%;
   }
 
+  *, button, input {
+    border: 0;
+    outline: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
   body {   
     font-family: "SourceSansPro", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

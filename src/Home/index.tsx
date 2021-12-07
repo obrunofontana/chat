@@ -1,13 +1,10 @@
 import React from 'react';
 
+import Layout from '../components/Layout';
 // import { Container } from './styles';
 
 const Home = function () {
-  return (
-    <div>
-      <h1>Home</h1>
-    </div>
-  );
+  return <Layout />;
 };
 
 export default Home;
