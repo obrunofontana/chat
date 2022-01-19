@@ -48,7 +48,7 @@ const Layout = function () {
 
     setAccepted(false);
   };
-
+  /* eslint-disable  @typescript-eslint/no-explicit-any */
   const handleSubmit = (event: React.ChangeEvent<any>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);

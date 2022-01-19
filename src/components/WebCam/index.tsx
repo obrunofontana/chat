@@ -65,6 +65,7 @@ const NelaCam: React.FC = function () {
                 color='primary'
                 aria-label='upload picture'
                 component='span'
+                /* eslint-disable  @typescript-eslint/no-explicit-any */
                 onClick={(e: any) => {
                   e.preventDefault();
                   capture();
