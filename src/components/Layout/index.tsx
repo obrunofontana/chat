@@ -18,7 +18,7 @@ import {
 import FormControlLabel from '@mui/material/FormControlLabel';
 import React, { useState } from 'react';
 
-import NelaCam from '../WebCam';
+// import NelaCam from '../WebCam';
 
 const Layout = function () {
   const [openModal, setOpenModal] = useState(false);
