@@ -1,6 +1,11 @@
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import React, { lazy, Suspense, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 
 import GlobalStyle from './styles/globalStyle';
 import scalePage from './utils/scalePage';
@@ -60,6 +65,7 @@ const App = function () {
       <Router>
         <Suspense fallback={<div>Carregando...</div>}>
           <Routes>
+            <Route path='index.html' element={<Navigate replace to='/' />} />
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
           </Routes>
