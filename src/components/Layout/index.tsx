@@ -128,7 +128,7 @@ const Layout = function () {
               variant='contained'
               sx={{ mt: 3, mb: 2 }}
             >
-              Entrar
+              Acessar
             </Button>
 
             {/* <!-- Install button, hidden by default --> */}
@@ -140,7 +140,7 @@ const Layout = function () {
                 variant='contained'
                 sx={{ mt: 3, mb: 2 }}
               >
-                Instalar Jaiminho Cam
+                Instalar Test Deploy
               </Button>
             </div>
           </Box>
