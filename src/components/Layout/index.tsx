@@ -130,9 +130,22 @@ const Layout = function () {
             >
               Entrar
             </Button>
+
+            {/* <!-- Install button, hidden by default --> */}
+            <div id='installContainer' className='hidden'>
+              <Button
+                id='butInstall'
+                type='button'
+                fullWidth
+                variant='contained'
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Instalar Jaiminho Cam
+              </Button>
+            </div>
           </Box>
 
-          <NelaCam />
+          {/* <NelaCam /> */}
         </Box>
 
         <Snackbar

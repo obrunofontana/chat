@@ -1,3 +1,4 @@
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 import React, { lazy, Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -12,17 +13,39 @@ const App = function () {
   // const [pwaEvent, setPwaEvent] = useState(undefined);
 
   useEffect(() => {
-    window.addEventListener('beforeinstallprompt', (e) => {
-      // Prevent the mini-infobar from appearing on mobile
-      // console.log("pwa event executed");
+    const divInstall = document.getElementById('installContainer');
+    let butInstall = document.getElementById('butInstall');
+
+    const windowAux = window as any;
+
+    windowAux.addEventListener('beforeinstallprompt', (e: any) => {
+      console.log(' windowAux.deferredPrompt', e);
       e.preventDefault();
-      // Stash the event so it can be triggered later.
-      // setPwaEvent(e);
-      // Update UI notify the user they can install the PWA
-      console.log(
-        'vai servir para notificar o usuário do mobile para instalar a aplicação',
-        e
-      );
+      windowAux.deferredPrompt = e;
+
+      // Remove the 'hidden' class from the install button container.
+      divInstall?.classList.toggle('hidden', false);
+      butInstall = document.getElementById('butInstall');
+    });
+
+    console.log('....  butInstall', butInstall);
+    butInstall?.addEventListener('click', async () => {
+      console.log('👍', 'butInstall-clicked');
+      const promptEvent = windowAux.deferredPrompt;
+      if (!promptEvent) {
+        // The deferred prompt isn't available.
+        return;
+      }
+      // Show the install prompt.
+      promptEvent.prompt();
+      // Log the result
+      const result = await promptEvent.userChoice;
+      console.log('👍', 'userChoice', result);
+      // Reset the deferred prompt variable, since
+      // prompt() can only be called once.
+      windowAux.deferredPrompt = null;
+      // Hide the install button.
+      divInstall?.classList.toggle('hidden', true);
     });
 
     window.addEventListener('resize', () => {

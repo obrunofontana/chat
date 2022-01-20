@@ -5,6 +5,7 @@
     "start_url": "./index.html",
     "name": "Nela Chat",
     "short_name": "Nela Chat",
+    "orientation": "portrait-primary",
     "icons": [
         {
             "src": "favicon.ico",
