@@ -66,7 +66,9 @@ const App = function () {
         <Suspense fallback={<div>Carregando...</div>}>
           <Routes>
             <Route path='index.html' element={<Navigate replace to='/' />} />
+
             <Route path='/' element={<Home />} />
+
             <Route path='/about' element={<About />} />
           </Routes>
         </Suspense>
